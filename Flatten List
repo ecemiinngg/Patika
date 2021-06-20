@@ -1,0 +1,9 @@
+liste = [[1, 'a', ['cat'], 2], [[[3]], 'dog'], 4, 5]
+def flatten(top_l):
+    for eleman in top_l:
+        if isinstance(eleman, list):
+            yield from flatten(eleman)
+        else:
+            yield eleman
+flat_list = [a for a in flatten(liste)]
+print(flat_list)
